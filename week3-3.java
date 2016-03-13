@@ -6,21 +6,21 @@ class Test3
 	public static void main(String args[]) throws Exception 
 	{
 		
-		String text=new String("");//ÅªÀÉ¼È¦s¾¹
-		HashMap <String,Integer> hashMap = new HashMap<String,Integer>();//hash¸ê®Æµ²ºc
+		String text=new String("");//è®€æª”æš«å­˜å™¨
+		HashMap <String,Integer> hashMap = new HashMap<String,Integer>();//hashè³‡æ–™çµæ§‹
 
 		int option=0;
 		
-		System.out.println("¬O§_Åª¨ú¤W¦¸¦sÀÉ?(1)¬O(2)§_\n");
+		System.out.println("æ˜¯å¦è®€å–ä¸Šæ¬¡å­˜æª”?(1)æ˜¯(2)å¦\n");
 		Scanner op3 = new Scanner(System.in);
 		option=op3.nextInt();
-		//¿ï¾Ü¬O§_Åª¨ú¤W¦¸ÀÉ®×©Î¬O­«·s¿é¤J¸ê®Æ
+		//é¸æ“‡æ˜¯å¦è®€å–ä¸Šæ¬¡æª”æ¡ˆæˆ–æ˜¯é‡æ–°è¼¸å…¥è³‡æ–™
 		
 
 		if(option==1)
-		{//ÅªÀÉ
+		{//è®€æª”
 			text = fileToText("test.txt");
-			System.out.println("Åª¤J¤U¦C¤º®e:");
+			System.out.println("è®€å…¥ä¸‹åˆ—å…§å®¹:");
 			System.out.println(text);
 			String [] jjj3=text.split("\\n");
 			for(String s1:jjj3)
@@ -30,11 +30,11 @@ class Test3
 			}
 
 
-			//±Ntext¤º®eÄé¨ìhash¤¤
+			//å°‡textå…§å®¹çŒåˆ°hashä¸­
 		}
 		else if(option==2)
-		{//­«·s¿é¤J
-			System.out.println("½Ğ¿é¤J¥y¤l\n");		
+		{//é‡æ–°è¼¸å…¥
+			System.out.println("è«‹è¼¸å…¥å¥å­\n");		
 			Scanner op = new Scanner(System.in);
 			String hhh=op.nextLine();
 			String [] jjj=hhh.split("\\s|\\,|\\.|\\!|\\?");
@@ -60,12 +60,12 @@ class Test3
 
 		while(true)//
 		{
-			System.out.println("(1)¿é¤J·s¥y¤l¼W¥[¦r²Å(2)¬d¸ß¦r²Å¦¸¼Æ(3)Â÷¶}¦sÀÉ\n");
+			System.out.println("(1)è¼¸å…¥æ–°å¥å­å¢åŠ å­—ç¬¦(2)æŸ¥è©¢å­—ç¬¦æ¬¡æ•¸(3)é›¢é–‹å­˜æª”\n");
 			Scanner op2 = new Scanner(System.in);
 			int hhh2=op2.nextInt();
 			if(hhh2==1)
 			{
-				System.out.println("½Ğ¿é¤J·s¥y¤l\n");		
+				System.out.println("è«‹è¼¸å…¥æ–°å¥å­\n");		
 				Scanner op4 = new Scanner(System.in);
 				String hhh4=op4.nextLine();
 				String [] jjj2=hhh4.split("\\s|\\,|\\.|\\!|\\?");
@@ -88,12 +88,12 @@ class Test3
 			}
 			else if(hhh2==2)
 			{
-				System.out.println("½Ğ¿é¤J¦r²Å\n");		
+				System.out.println("è«‹è¼¸å…¥å­—ç¬¦\n");		
 				Scanner op5 = new Scanner(System.in);
 				String hhh5=op5.nextLine();
 				if(hashMap.get(hhh5)==null)
 				{
-					System.out.println("¬dµL¦¹¦r²Å!!!\n");
+					System.out.println("æŸ¥ç„¡æ­¤å­—ç¬¦!!!\n");
 				}
 				else
 				{
@@ -108,9 +108,9 @@ class Test3
 			}
 		}
 		
-		//¼gÀÉ
-		text="";//°O±o²MªÅ!
-		for(HashMap.Entry<String,Integer> entry : hashMap.entrySet())//±Nhash¤¤ªº¸ê®ÆÂà¦¨text®æ¦¡
+		//å¯«æª”
+		text="";//è¨˜å¾—æ¸…ç©º!
+		for(HashMap.Entry<String,Integer> entry : hashMap.entrySet())//å°‡hashä¸­çš„è³‡æ–™è½‰æˆtextæ ¼å¼
 		{
 			String key = entry.getKey();
     			int value = entry.getValue();
@@ -118,7 +118,7 @@ class Test3
 		}
 		textToFile(text, "test.txt", "UTF-8");
 		String text2 = fileToText("test.txt");
-		System.out.println("¦¨¥\¼g¤J¤U¦C¤º®e:");
+		System.out.println("æˆåŠŸå¯«å…¥ä¸‹åˆ—å…§å®¹:");
 		System.out.println(text2);
 	}
 	public static String fileToText(String fileName) throws Exception 
@@ -134,7 +134,7 @@ class Test3
 	
 	public static void textToFile(String pText, String outFile, String pEncode) throws Exception 
 	{
-		FileOutputStream fos = new FileOutputStream(outFile, false);//***********ºô¸ô¤W»¡¥[¤Wfalse¥i¥HÂĞ»\­ì¦³¸ê®Æ ¦ı¬O¨S¥Î
+		FileOutputStream fos = new FileOutputStream(outFile, false);
 		Writer writer;
 		if (pEncode == null)
 		{
@@ -142,7 +142,7 @@ class Test3
 			writer.write(pText);
 		}
 		else
-		{//·|°µ³o¬q
+		{//æœƒåšé€™æ®µ
 			writer = new  OutputStreamWriter(fos, pEncode);
 			writer.write(pText);
 		}
